@@ -30,6 +30,7 @@ class AulaController extends Controller
      */
     public function store(StoreAulaRequest $request)
     {
+/*
 //        echo "aqui voy a guardar lo que viene en el request";
 //        @dump($request);
         $datos = $request->all();
@@ -43,11 +44,12 @@ class AulaController extends Controller
         $nueva->nombre = $nombre;
         $nueva->capacidad  = $capacidad;
 */
-        $nueva->fill($datos);        
+/*        $nueva->fill($datos);        
         $nueva->save();
 
-        return redirect('/');
-
+        return redirect('/');*/
+        $aula = Aula::create($request->validated());
+        return response()->json($aula, 201);
     }
 
     /**

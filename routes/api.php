@@ -24,3 +24,5 @@ Route::post('guardar', [MobiliarioController::class,'store'])->name('mobiliario.
 Route::get('mostrar/{mobiliario}', [ MobiliarioController::class ,'show'])->name('mobiliario.show');
 Route::put('actualizar/{mobiliario}', [ MobiliarioController::class ,'update'])->name('mobiliario.update');
 Route::delete('eliminar/{mobiliario}', [ MobiliarioController::class ,'destroy'])->name('mobiliario.destroy');
+Route::apiResource('edificios', \App\Http\Controllers\EdificioController::class);
+Route::apiResource('aulas', App\Http\Controllers\AulaController::class);

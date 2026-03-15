@@ -8,5 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Aula extends Model
 {
     use HasFactory;
-    protected $fillable = ['nombre','capacidad'];
+    protected $fillable = ['nombre', 'edificio_id', 'capacidad'];
+
+    public function edificio()
+        {
+            return $this->belongsTo(Edificio::class);
+        }
 }
